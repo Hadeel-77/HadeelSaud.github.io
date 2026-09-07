@@ -52,11 +52,12 @@
     }
 
     .nav-inner {
-      min-height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 30px;
+  min-height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  min-width: 0;
     }
 
     .brand {
@@ -68,9 +69,12 @@
     .brand span { color: var(--accent-2); }
 
     .nav-links {
-      display: flex;
-      gap: 26px;
-      list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 8px 20px;
+  list-style: none;
+  min-width: 0;
     }
 
     .nav-links a {
@@ -435,24 +439,64 @@
       font-size: .78rem;
     }
 
-    @media (max-width: 720px) {
-      .container { width: min(var(--max), calc(100% - 28px)); }
+@media (max-width: 720px) {
 
-      .nav-inner { min-height: 64px; }
-      .nav-links { gap: 14px; }
-      .nav-links a { font-size: .78rem; }
+  .container {
+    width: calc(100% - 28px);
+  }
 
-      .hero { padding: 80px 0 65px; min-height: auto; }
-      h1 { font-size: clamp(2.8rem, 15vw, 4.4rem); }
+  .nav-inner {
+    min-height: 64px;
+    flex-wrap: wrap;
+    padding: 10px 0;
+    gap: 8px 16px;
+  }
 
-      .section { padding: 65px 0; }
+  .nav-links {
+    gap: 6px 14px;
+    flex-wrap: wrap;
+  }
 
-      .projects { grid-template-columns: 1fr; }
+  .nav-links a {
+    font-size: .78rem;
+  }
 
-      .experience-item {
-        grid-template-columns: 1fr;
-        gap: 5px;
-      }
+  .hero {
+    padding: 80px 0 65px;
+    min-height: auto;
+  }
+
+  h1 {
+    font-size: clamp(2.8rem, 15vw, 4.4rem);
+  }
+
+  .section {
+    padding: 65px 0;
+  }
+
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-item {
+    grid-template-columns: 1fr;
+    gap: 5px;
+  }
+
+  .certifications,
+  .languages,
+  .skills-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .contact {
+    padding-top: 75px;
+  }
+
+  footer {
+    margin-top: 60px;
+  }
+}
 
       .certifications, .languages, .skills-grid { grid-template-columns: 1fr; }
       .contact { padding-top: 75px; }

@@ -52,12 +52,11 @@
     }
 
     .nav-inner {
-  min-height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  min-width: 0;
+      min-height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
     }
 
     .brand {
@@ -69,12 +68,9 @@
     .brand span { color: var(--accent-2); }
 
     .nav-links {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
-  gap: 8px 20px;
-  list-style: none;
-  min-width: 0;
+      display: flex;
+      gap: 26px;
+      list-style: none;
     }
 
     .nav-links a {
@@ -438,25 +434,31 @@
       color: #737985;
       font-size: .78rem;
     }
-@media (max-width: 470px) {
-  .brand {
-    font-size: .95rem;
-  }
 
-  .nav-inner {
-    align-items: flex-start;
-  }
+    @media (max-width: 720px) {
+      .container { width: min(var(--max), calc(100% - 28px)); }
 
-  .nav-links {
-    width: 100%;
-    justify-content: flex-start;
-    gap: 5px 12px;
-  }
+      .nav-inner { min-height: 64px; }
+      .nav-links { gap: 14px; }
+      .nav-links a { font-size: .78rem; }
 
-  .nav-links a {
-    font-size: .72rem;
-  }
-}
+      .hero { padding: 80px 0 65px; min-height: auto; }
+      h1 { font-size: clamp(2.8rem, 15vw, 4.4rem); }
+
+      .section { padding: 65px 0; }
+
+      .projects { grid-template-columns: 1fr; }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+        gap: 5px;
+      }
+
+      .certifications, .languages, .skills-grid { grid-template-columns: 1fr; }
+      .contact { padding-top: 75px; }
+      footer { margin-top: 60px; }
+    }
+
     @media (max-width: 470px) {
       .brand { font-size: .95rem; }
       .nav-links { gap: 10px; }
